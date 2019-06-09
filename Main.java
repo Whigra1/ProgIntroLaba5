@@ -28,7 +28,7 @@ public class Main {
         HashMap<String,Integer> variables = new HashMap<>();
         AssignmentParser p = new AssignmentParser();
         Tree tree = new Tree(variables);
-        String lines = "a=5\nc=25+\nac*";
+        String lines = "a=5\nc=25+\nb=23+1-\nab*";
         for (String s:lines.split("\n"))
             if(s.contains("=")){
                 String var = p.findVar(s);
