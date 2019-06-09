@@ -16,7 +16,9 @@ public class Operator{
             return a / b;
         if (operator.equals("-"))
             return a - b;
+        if (operator.equals("^"))
+            return (int) Math.pow(a,b);
         return 0;
     }
-
 }
+

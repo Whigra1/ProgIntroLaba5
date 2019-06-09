@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-//C:\Users\nazar\Downloads\Univwersitat\test.txt
+
 
 public class Parser {
     private File file;
@@ -59,11 +59,10 @@ public class Parser {
         int size = queue.size();
     }
 
-    private void toPosrfix() {
+    public LinkedList<String> toPosrfix() {
         LinkedList<String> q1 = new LinkedList<>();
         go: while (!queue.isEmpty()) {
             String str = queue.removeFirst();
-            System.out.println(str);
             if (str.equals("(")) {
                 q1.add(str);
                 continue;
@@ -114,7 +113,8 @@ public class Parser {
         for(int i = 0; i < size; i++){
             postfixQueue.add(q1.removeLast());
         }
-        printPostfix();
+        return postfixQueue;
+
     }
 
     private boolean cheack(String str){
