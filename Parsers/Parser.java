@@ -1,12 +1,10 @@
+package Parsers;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
-
-
-
 public class Parser {
     private File file;
     private ArrayList<String> data;
@@ -38,6 +36,7 @@ public class Parser {
             System.out.println(data.get(i));
         }
     }
+
 
     private void parsing() {
         String expression = data.get(data.size() - 1);

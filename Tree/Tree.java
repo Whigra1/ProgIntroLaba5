@@ -1,13 +1,20 @@
 package Tree;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Stack;
 
 public class Tree {
     private Node root;
-    final static String opers = "+-*/^";
+    private final static String opers = "+-*/^";
+    private HashMap<String,Integer> variables;
+    public Tree(HashMap<String,Integer> vars){this.variables = vars;}
     public void buildTree(String text){
         Stack<Node> stack = new Stack<>();
+        if (variables.size() > 0) {
+            for (String s : variables.keySet())
+                text = text.replaceAll(s, String.valueOf(variables.get(s)));
+        }
         for(int i = 0; i < text.length(); i++) {
             if (text.charAt(i) == '+' || text.charAt(i) == '*') {
                 Node r = stack.pop();
@@ -31,7 +38,7 @@ public class Tree {
         root = stack.pop();
     }
     public int eval(){
-           return root.eval();
+        return root.eval();
     }
     public boolean in(String c){
         for (int i = 0; i < opers.length(); i++)
@@ -40,11 +47,6 @@ public class Tree {
         return false;
     }
     public static void main(String[] args) {
-        String test = "25+678+**";
-        Tree tree = new Tree();
-        tree.buildTree(test);
-        System.out.println(tree.eval());
-        System.out.println();
 
     }
 }
