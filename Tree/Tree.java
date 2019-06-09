@@ -16,7 +16,7 @@ public class Tree {
                 text = text.replaceAll(s, String.valueOf(variables.get(s)));
         }
         for(int i = 0; i < text.length(); i++) {
-            if (text.charAt(i) == '+' || text.charAt(i) == '*') {
+            if (in(String.valueOf(text.charAt(i)))){
                 Node r = stack.pop();
                 Node l = stack.pop();
                 stack.push(new FunctionalNode(String.valueOf(text.charAt(i)),l,r));
