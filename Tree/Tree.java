@@ -1,4 +1,4 @@
-package Tree;
+package oop5.ProgIntroLaba5.Tree;
 
 import java.util.HashMap;
 import java.util.LinkedList;

@@ -1,4 +1,4 @@
-package Parsers;
+package oop5.ProgIntroLaba5.Parsers;
 
 public class AssignmentParser {
     public String findVar(String str){

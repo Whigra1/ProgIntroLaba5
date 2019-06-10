@@ -1,29 +1,14 @@
+package oop5.ProgIntroLaba5;
 import java.util.HashMap;
-import java.util.LinkedList;
 
-import Parsers.AssignmentParser;
-import Tree.Tree;
+import oop5.ProgIntroLaba5.Parsers.AssignmentParser;
+import oop5.ProgIntroLaba5.Tree.Tree;
+
 public class Main {
     public static void main(String[] args) throws Exception{
         miniTest();
     }
-    public static void test(Tree tree, AssignmentParser parser, HashMap<String,Integer> variables){
-        String text1 = "c=23+";
-        String text2 = "a=53+";
-        String text3 = "b=13+";
-        String expr = parser.findExpr(text1);
-        String var = parser.findVar(text1);
-        tree.buildTree(expr);
-        variables.put(var,tree.eval());
-        expr = parser.findExpr(text2);
-        var = parser.findVar(text2);
-        tree.buildTree(expr);
-        variables.put(var,tree.eval());
-        expr = parser.findExpr(text3);
-        var = parser.findVar(text3);
-        tree.buildTree(expr);
-        variables.put(var,tree.eval());
-    }
+
     public static void miniTest(){
         HashMap<String,Integer> variables = new HashMap<>();
         AssignmentParser p = new AssignmentParser();

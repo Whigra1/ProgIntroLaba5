@@ -1,4 +1,4 @@
-package Parsers;
+package oop5.ProgIntroLaba5.Parsers;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -18,6 +18,11 @@ public class Parser {
         parsing();
         postfixQueue = new LinkedList<>();
         toPosrfix();
+    }
+
+    public void read(String str) throws Exception{
+        parsing();
+
     }
 
     private void read()throws Exception{
@@ -46,6 +51,26 @@ public class Parser {
             if(expression.substring(i, i + 1).equals("+") || expression.substring(i, i + 1).equals(";") || expression.substring(i, i + 1).equals("-")
             || expression.substring(i, i + 1).equals("/") || expression.substring(i, i + 1).equals("*") || expression.substring(i, i + 1).equals("(")
             || expression.substring(i, i + 1).equals(")") || expression.substring(i, i + 1).equals("^")) {
+                str = expression.substring(index, i);
+                if(i != 0 && index != i) queue.add(str);
+                if(!expression.substring(i, i + 1).equals(";")) {
+                    queue.add(expression.substring(i, i + 1));
+                }
+                index = i + 1;
+            }
+        }
+        System.out.println("PARSER: ");
+        int size = queue.size();
+    }
+
+    private void parsing(String strk) {
+        String expression = strk;
+        String str = "";
+        int index = 0;
+        for (int i = 0; i < expression.length(); i++) {
+            if(expression.substring(i, i + 1).equals("+") || expression.substring(i, i + 1).equals(";") || expression.substring(i, i + 1).equals("-")
+                    || expression.substring(i, i + 1).equals("/") || expression.substring(i, i + 1).equals("*") || expression.substring(i, i + 1).equals("(")
+                    || expression.substring(i, i + 1).equals(")") || expression.substring(i, i + 1).equals("^")) {
                 str = expression.substring(index, i);
                 if(i != 0 && index != i) queue.add(str);
                 if(!expression.substring(i, i + 1).equals(";")) {

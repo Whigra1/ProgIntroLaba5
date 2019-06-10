@@ -1,4 +1,4 @@
-package Tree;
+package oop5.ProgIntroLaba5.Tree;
 
 public class Operator{
     private int operands;

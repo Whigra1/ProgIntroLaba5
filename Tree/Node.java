@@ -1,4 +1,4 @@
-package Tree;
+package oop5.ProgIntroLaba5.Tree;
 
 abstract class Node {
     Node left;
